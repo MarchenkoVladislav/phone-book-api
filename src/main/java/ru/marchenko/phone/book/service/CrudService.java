@@ -12,7 +12,7 @@ public interface CrudService<E extends BaseEntity> {
 
     E getById(Long id);
 
-    E createOrUpdate(E entity);
+    E saveOrUpdate(E entity);
 
-    void delete(E entity);
+    void deleteById(Long id);
 }

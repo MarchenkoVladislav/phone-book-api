@@ -26,12 +26,12 @@ abstract class AbstractCrudService<R extends JpaRepository<E, Long>, E extends B
     }
 
     @Override
-    public E createOrUpdate(E entity) {
+    public E saveOrUpdate(E entity) {
         return repository.save(entity);
     }
 
     @Override
-    public void delete(E entity) {
-        repository.delete(entity);
+    public void deleteById(Long id) {
+        repository.deleteById(id);
     }
 }
