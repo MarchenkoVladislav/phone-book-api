@@ -125,7 +125,7 @@ public class PhoneBookRecordController {
         return new ResponseEntity<>(records, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/ownerIdAndNumber", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/ownerIdAndPhone", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<PhoneBookRecord>> getAllRecordsByOwnerIdAndPhoneNumber(@RequestParam Long ownerId, @RequestParam String phoneNumber) {
         if (ownerId == null || phoneNumber == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
