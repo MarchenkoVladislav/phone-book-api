@@ -131,17 +131,6 @@ class PhoneBookRecordServiceImplTest {
     }
 
     @Test
-    void testUpdateMethod() {
-        phoneBookService.save(FIRST_PHONE_RECORD);
-        assertNotEquals((Long) 0L, FIRST_PHONE_RECORD.getId());
-        assertEquals(FIRST_RECORD_TITLE, phoneBookService.getById(FIRST_PHONE_RECORD.getId()).getTitle());
-
-        FIRST_PHONE_RECORD.setTitle(SECOND_RECORD_TITLE);
-        phoneBookService.update(FIRST_PHONE_RECORD);
-        assertEquals(SECOND_RECORD_TITLE, phoneBookService.getById(FIRST_PHONE_RECORD.getId()).getTitle());
-    }
-
-    @Test
     void testDeleteMethod() {
         FIRST_PHONE_RECORD.setOwnerId(FIRST_USER.getId());
         phoneBookService.save(FIRST_PHONE_RECORD);
