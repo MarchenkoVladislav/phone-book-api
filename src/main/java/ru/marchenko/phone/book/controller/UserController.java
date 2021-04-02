@@ -51,7 +51,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        User savedUser = userService.saveOrUpdate(user);
+        User savedUser = userService.save(user);
 
         if (savedUser == null) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -70,7 +70,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        User updatedUser = userService.saveOrUpdate(user);
+        User updatedUser = userService.update(user);
 
         if (updatedUser == null) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

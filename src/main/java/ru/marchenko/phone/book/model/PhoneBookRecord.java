@@ -2,6 +2,7 @@ package ru.marchenko.phone.book.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
 @Table(name = "phone_book_records")
 @Setter
 @Getter
+@ToString
 public class PhoneBookRecord extends BaseEntity {
     @Column(name = "owner_id", nullable = false, columnDefinition = "bigint")
     private Long ownerId;

@@ -53,7 +53,7 @@ public class PhoneBookRecordController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        PhoneBookRecord savedRecord = phoneBookRecordService.saveOrUpdate(record);
+        PhoneBookRecord savedRecord = phoneBookRecordService.save(record);
 
         if (savedRecord == null) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -72,7 +72,7 @@ public class PhoneBookRecordController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        PhoneBookRecord updatedRecord = phoneBookRecordService.saveOrUpdate(record);
+        PhoneBookRecord updatedRecord = phoneBookRecordService.update(record);
 
         if (updatedRecord == null) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
