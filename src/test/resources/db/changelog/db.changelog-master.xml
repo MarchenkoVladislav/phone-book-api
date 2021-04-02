@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="Vladislav Marchenko" id="db.changelog-1.0.1">
+        <createTable tableName="users">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="character varying(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="phone_book_records">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="owner_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="character varying(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="character varying(18)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseColumnNames="owner_id"
+                baseTableName="phone_book_records"
+                baseTableSchemaName="public"
+                constraintName="fk_phone_book_records_users"
+                onDelete="CASCADE"
+                onUpdate="RESTRICT"
+                referencedColumnNames="id"
+                referencedTableName="users"
+                referencedTableSchemaName="public"
+                validate="true"
+        />
+    </changeSet>
+
+    <changeSet author="Vladislav Marchenko" id="db.changelog-1.0.2">
+        <createSequence
+                incrementBy="1" ordered="true" schemaName="public"
+                sequenceName="hibernate_sequence" startValue="1"/>
+    </changeSet>
+
+</databaseChangeLog>

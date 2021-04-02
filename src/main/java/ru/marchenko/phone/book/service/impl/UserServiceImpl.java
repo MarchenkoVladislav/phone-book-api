@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author Created by Vladislav Marchenko on 31.03.2021
  */
-@Service
+@Service("userServiceImpl")
 @Slf4j
 public class UserServiceImpl extends AbstractCrudService<UserRepo, User> implements UserService {
     @Autowired

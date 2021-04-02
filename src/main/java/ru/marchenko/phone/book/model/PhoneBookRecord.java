@@ -1,9 +1,7 @@
 package ru.marchenko.phone.book.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,11 +12,16 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "phone_book_records")
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
-@Setter
-@Getter
-@ToString
+@Data
+@NoArgsConstructor
 public class PhoneBookRecord extends BaseEntity {
+
+    public PhoneBookRecord(Long ownerId, String title, String phoneNumber) {
+        this.ownerId = ownerId;
+        this.title = title;
+        this.phoneNumber = phoneNumber;
+    }
+
     @Column(name = "owner_id", nullable = false, columnDefinition = "bigint")
     private Long ownerId;
 

@@ -41,10 +41,6 @@ abstract class AbstractCrudService<R extends JpaRepository<E, Long>, E extends B
     }
 
     @Override
-    @Caching(cacheable = {
-            @Cacheable(value = "users", key = "#entity.id"),
-            @Cacheable(value = "phoneBookRecords", key = "#entity.id")
-    })
     public E save(E entity) {
         log.info(new Date() + ": saving of entity of " + typeOfE + " - " + entity);
         return repository.save(entity);

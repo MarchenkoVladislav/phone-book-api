@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author Created by Vladislav Marchenko on 31.03.2021
  */
-@Service
+@Service("phoneBookRecordServiceImpl")
 @Slf4j
 public class PhoneBookRecordServiceImpl extends AbstractCrudService<PhoneBookRecordRepo, PhoneBookRecord> implements PhoneBookRecordService {
     @Autowired

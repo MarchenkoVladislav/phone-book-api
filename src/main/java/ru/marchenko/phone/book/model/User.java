@@ -1,10 +1,8 @@
 package ru.marchenko.phone.book.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -15,11 +13,13 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "users")
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
-@Getter
-@Setter
-@ToString
+@Data
+@NoArgsConstructor
 public class User extends BaseEntity {
+
+    public User(String name) {
+        this.name = name;
+    }
 
     @Column(name = "name", nullable = false, columnDefinition = "character varying(100)")
     private String name;
