@@ -1,5 +1,6 @@
 package ru.marchenko.phone.book.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,6 +14,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "phone_book_records")
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Setter
 @Getter
 @ToString
