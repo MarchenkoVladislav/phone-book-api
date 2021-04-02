@@ -94,7 +94,7 @@ public class PhoneBookRecordController {
     }
 
 
-    @RequestMapping(value = "/ownerId/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/ownerId", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<PhoneBookRecord>> getAllRecordsByOwnerId(@RequestParam Long ownerId) {
         if (ownerId == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -110,7 +110,7 @@ public class PhoneBookRecordController {
     }
 
 
-    @RequestMapping(value = "/ownerIdAndTitle/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/ownerIdAndTitle", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<PhoneBookRecord>> getAllRecordsByOwnerIdAndTitle(@RequestParam Long ownerId, @RequestParam String title) {
         if (ownerId == null || title == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -125,7 +125,7 @@ public class PhoneBookRecordController {
         return new ResponseEntity<>(records, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/ownerIdAndNumber/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/ownerIdAndNumber", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<PhoneBookRecord>> getAllRecordsByOwnerIdAndPhoneNumber(@RequestParam Long ownerId, @RequestParam String phoneNumber) {
         if (ownerId == null || phoneNumber == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

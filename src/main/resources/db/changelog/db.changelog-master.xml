@@ -42,4 +42,63 @@
                 validate="true"
         />
     </changeSet>
+
+    <changeSet author="Vladislav Marchenko" id="db.changelog-2.0.0">
+        <insert tableName="users">
+            <column name="id" value="1"/>
+            <column name="name" value="Andrey Andreev"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="id" value="2"/>
+            <column name="name" value="Petr Petrov"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="id" value="3"/>
+            <column name="name" value="Stepan Stepanov"/>
+        </insert>
+
+        <insert tableName="phone_book_records">
+            <column name="id" value="1"/>
+            <column name="owner_id" value="1"/>
+            <column name="title" value="mother"/>
+            <column name="phone_number" value="123-456"/>
+        </insert>
+
+        <insert tableName="phone_book_records">
+            <column name="id" value="2"/>
+            <column name="owner_id" value="1"/>
+            <column name="title" value="father"/>
+            <column name="phone_number" value="123-455"/>
+        </insert>
+
+        <insert tableName="phone_book_records">
+            <column name="id" value="3"/>
+            <column name="owner_id" value="1"/>
+            <column name="title" value="granny"/>
+            <column name="phone_number" value="123-450"/>
+        </insert>
+
+        <insert tableName="phone_book_records">
+            <column name="id" value="4"/>
+            <column name="owner_id" value="2"/>
+            <column name="title" value="food delivery"/>
+            <column name="phone_number" value="22-33-44"/>
+        </insert>
+
+        <insert tableName="phone_book_records">
+            <column name="id" value="5"/>
+            <column name="owner_id" value="2"/>
+            <column name="title" value="flowers delivery"/>
+            <column name="phone_number" value="22-33-11"/>
+        </insert>
+
+        <insert tableName="phone_book_records">
+            <column name="id" value="6"/>
+            <column name="owner_id" value="3"/>
+            <column name="title" value="taxi"/>
+            <column name="phone_number" value="22-33-00"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
